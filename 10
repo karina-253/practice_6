@@ -1,0 +1,62 @@
+import turtle as t
+
+
+x_top1 = float(input())
+y_top1 = float(input())
+x_down1 = float(input())
+y_down1 = float(input())
+x_top2 = float(input())
+y_top2 = float(input())
+x_down2 = float(input())
+y_down2 = float(input())
+a = float(input())
+b = float(input())
+
+if x_down1 < x_top2 or x_down2 < x_top1 or y_down1 > y_top2 or y_down2 > y_top1:
+    point = "Прямоугольники лежат вне друг друга, не касаясь"
+elif x_down1 == x_top2 or x_down2 == x_top1 or y_down1 == y_top2 or y_down2 == y_top1:
+    point = "Прямоугольники имеют касание"
+elif x_top1 < x_down2 and x_down1 > x_top2 and y_top1 > y_down2 and y_down1 < y_top2:
+    point = "Прямоугольники имеют пересечение"
+elif x_top1 >= x_top2 and x_down1 <= x_down2 and y_top1 <= y_top2 and y_down1 >= y_down2:
+    point = "Один прямоугольник лежит внутри другого, не касаясь"
+elif x_top2 >= x_top1 and x_down2 <= x_down1 and y_top2 <= y_top1 and y_down2 >= y_down1:
+    point = "Один прямоугольник лежит внутри другого, не касаясь."
+else:
+    point = "Прямоугольники расположены по-другому"
+
+t.speed(0)
+t.penup()
+t.goto(x_top1, y_top1)
+t.goto(x_down1, y_down1)
+t.pendown()
+t.forward(a)
+t.left(90)
+t.forward(b)
+t.left(90)
+t.forward(a)
+t.left(90)
+t.forward(b)
+
+
+t.speed(0)
+t.penup()
+t.goto(x_top2, y_top2)
+t.goto(x_down2, y_down2)
+t.pendown()
+t.forward(a)
+t.left(90)
+t.forward(b)
+t.left(90)
+t.forward(a)
+t.left(90)
+t.forward(b)
+
+
+t.penup()
+t.goto(x_top1-50 , y_top1 - 90)
+t.write(f"{point}")
+
+
+t.hideturtle()
+t.done()
