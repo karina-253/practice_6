@@ -1,0 +1,15 @@
+motion = input()
+start, final = motion.split('-')
+
+start_x = ord(start[0].lower()) - ord('a') + 1
+start_y = int(start[1])
+
+final_x = ord(final[0].lower()) - ord('a') + 1
+final_y = int(final[1])
+
+if ((abs(start_x - final_x) == 2 and abs(start_y - final_y) == 1)
+        or (abs(start_x - final_x) == 1 and abs(start_y - final_y) == 2)):
+    print('верно')
+else:
+    print('ошибка')
+    
