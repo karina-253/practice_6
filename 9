@@ -1,0 +1,49 @@
+import turtle as t
+import math
+
+
+x_1 = float(input(''))
+y_1 = float(input(''))
+r_1 = float(input(''))
+
+x_2 = float(input(''))
+y_2 = float(input(''))
+r_2 = float(input(''))
+#расстояние между центрами окружностей
+distance = math.sqrt((x_2 - x_1) ** 2 + (y_2 - y_1) ** 2)
+
+
+if distance > r_1 + r_2:
+    point = "Окружности лежат одна вне другой, не касаясь"
+elif distance == r_1 + r_2:
+    point = "Окружности имеют внешнее касание"
+elif abs(r_1 - r_2) < distance < r_1 + r_2:
+    point = "Окружности пересекаются"
+elif distance == abs(r_1 - r_2):
+    point = "Окружности имеют внутреннее касание"
+elif distance < abs(r_1 - r_2):
+    point = "Одна окружность лежит внутри другой, не касаясь"
+else:
+    point = 'Окружности совпадают'
+
+
+t.speed(0)
+t.penup()
+t.goto(x_1, y_1 - r_1)
+t.pendown()
+t.circle(r_1)
+t.penup()
+
+t.speed(0)
+t.penup()
+t.goto(x_2, y_2 - r_2)
+t.pendown()
+t.circle(r_2)
+
+
+t.penup()
+t.goto(x_1-50 , y_1 - 90)
+t.write(f"{point}")
+
+t.hideturtle()
+t.done()
