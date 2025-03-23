@@ -1,0 +1,10 @@
+import math
+
+
+diameter = 6.5 * 2
+A,B = input().split('x')
+diagonal = math.sqrt(int(A)**2 * int(B)**2)
+if diameter >= diagonal:
+    print('да')
+else:
+    print('нет')
