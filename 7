@@ -1,0 +1,12 @@
+def sushi(K):
+    for y in range(K//7+1):
+        if (K - 7 * y) % 5 == 0:
+            return True
+
+K = int(input())
+
+if sushi(K):
+    print('да')
+else:
+    print('нет')
+    
