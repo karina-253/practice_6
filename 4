@@ -1,0 +1,9 @@
+cell = input()
+letter = ord(cell[0].lower()) - ord('a') + 1
+number = int(cell[1])
+
+if (number + letter) % 2:
+    print('белый')
+else:
+    print('черный')
+    
