@@ -1,3 +1,4 @@
-N, K, M = map(int, input().split())
-time = K * 2 * M * N
+import math
+N, K, M=map(int,input().split())
+time =math.ceil(N * 2 / K) * M
 print(time)
